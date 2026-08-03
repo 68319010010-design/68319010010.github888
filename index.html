@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Unit Converter - เครื่องมือแปลงหน่วยวัดความยาว</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glob"></div>
+    <div class="background-glob glob-2"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-ruler-combined"></i>
+                <span>BuildMetric</span>
+            </div>
+            <p class="subtitle">ระบบแปลงหน่วยวัดความยาวสำหรับช่างและวิศวกร</p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="converter-card">
+            <div class="input-group">
+                <label for="fromValue">
+                    <i class="fa-solid fa-pen"></i> ป้อนค่าที่ต้องการแปลง
+                </label>
+                <div class="input-wrapper">
+                    <input type="number" id="fromValue" placeholder="กรอกตัวเลข..." value="1" step="any">
+                    <select id="fromUnit">
+                        <optgroup label="ระบบเมตริก (Metric)">
+                            <option value="mm">มิลลิเมตร (mm)</option>
+                            <option value="cm">เซนติเมตร (cm)</option>
+                            <option value="m" selected>เมตร (m)</option>
+                            <option value="km">กิโลเมตร (km)</option>
+                        </optgroup>
+                        <optgroup label="ระบบอังกฤษ (Imperial)">
+                            <option value="in">นิ้ว (in)</option>
+                            <option value="ft">ฟุต (ft)</option>
+                            <option value="yd">หลา (yd)</option>
+                            <option value="mi">ไมล์ (mi)</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Swap Button (ลูกเล่นปุ่มสลับหน่วย) -->
+            <button id="swapBtn" class="swap-btn" title="สลับหน่วยวัด">
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+
+            <div class="input-group">
+                <label for="toValue">
+                    <i class="fa-solid fa-square-check"></i> ผลลัพธ์
+                </label>
+                <div class="input-wrapper">
+                    <input type="text" id="toValue" readonly placeholder="ผลลัพธ์">
+                    <select id="toUnit">
+                        <optgroup label="ระบบเมตริก (Metric)">
+                            <option value="mm">มิลลิเมตร (mm)</option>
+                            <option value="cm">เซนติเมตร (cm)</option>
+                            <option value="m">เมตร (m)</option>
+                            <option value="km">กิโลเมตร (km)</option>
+                        </optgroup>
+                        <optgroup label="ระบบอังกฤษ (Imperial)">
+                            <option value="in">นิ้ว (in)</option>
+                            <option value="ft" selected>ฟุต (ft)</option>
+                            <option value="yd">หลา (yd)</option>
+                            <option value="mi">ไมล์ (mi)</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Quick Action & Formulas Display -->
+            <div class="info-box">
+                <span id="formulaText">1 m = 3.28084 ft</span>
+                <button id="copyBtn" class="copy-btn"><i class="fa-regular fa-copy"></i> คัดลอกผลลัพธ์</button>
+            </div>
+
+            <!-- ลูกเล่นเพิ่มเติม: ตารางประวัติการคำนวณ -->
+            <div class="history-section">
+                <h3><i class="fa-solid fa-clock-rotate-left"></i> ประวัติการแปลงล่าสุด</h3>
+                <ul id="historyList" class="history-list">
+                    <li class="empty-history">ยังไม่มีประวัติการแปลงหน่วย</li>
+                </ul>
+                <button id="clearHistoryBtn" class="clear-btn">ล้างประวัติ</button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 BuildMetric Converter | พัฒนาสำหรับงานออกแบบและก่อสร้าง</p>
+            <p class="author">เสนอ: <strong>อาจารย์ทศพร แสงจำปี</strong></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

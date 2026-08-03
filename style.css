@@ -1,0 +1,286 @@
+/* Reset & Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+/* Background Animated Globs (ลูกเล่นพื้นหลังเรืองแสง) */
+.background-glob {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    filter: blur(80px);
+    opacity: 0.4;
+    top: 10%;
+    left: 15%;
+    animation: float 8s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.glob-2 {
+    top: 60%;
+    left: 65%;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 40px) scale(1.1); }
+}
+
+/* Layout Container */
+.container {
+    width: 100%;
+    max-width: 520px;
+    z-index: 1;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #38bdf8;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: #60a5fa;
+    transform: rotate(-10deg);
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+/* Converter Card (Glassmorphism Effect) */
+.converter-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Input Groups */
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+}
+
+.input-group label i {
+    color: #38bdf8;
+    margin-right: 4px;
+}
+
+.input-wrapper {
+    display: flex;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-wrapper:focus-within {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.input-wrapper input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 14px 16px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    outline: none;
+    width: 50%;
+}
+
+.input-wrapper select {
+    background: #1e293b;
+    border: none;
+    color: #38bdf8;
+    font-weight: 500;
+    padding: 0 14px;
+    outline: none;
+    cursor: pointer;
+    border-left: 1px solid #334155;
+    transition: background 0.2s;
+}
+
+.input-wrapper select:hover {
+    background: #334155;
+}
+
+/* Swap Button */
+.swap-btn {
+    align-self: center;
+    background: linear-gradient(135deg, #38bdf8, #2563eb);
+    color: #fff;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swap-btn:hover {
+    transform: rotate(180deg) scale(1.08);
+    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.6);
+}
+
+/* Info & Copy Box */
+.info-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(51, 65, 85, 0.4);
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: #38bdf8;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.copy-btn:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+/* History Section (ลูกเล่นประวัติ) */
+.history-section {
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 16px;
+}
+
+.history-section h3 {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.history-list {
+    list-style: none;
+    max-height: 110px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.history-list li {
+    background: rgba(15, 23, 42, 0.4);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.empty-history {
+    color: #64748b;
+    justify-content: center !important;
+}
+
+.clear-btn {
+    background: transparent;
+    border: none;
+    color: #f43f5e;
+    font-size: 0.75rem;
+    cursor: pointer;
+    margin-top: 8px;
+    float: right;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.footer .author {
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .converter-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+    }
+
+    .input-wrapper input {
+        width: 100%;
+    }
+
+    .input-wrapper select {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #334155;
+        padding: 10px 14px;
+    }
+}
